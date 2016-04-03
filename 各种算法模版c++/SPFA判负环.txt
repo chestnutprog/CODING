@@ -1,0 +1,32 @@
+struct edgs{int go,next,w;}e[maxm];
+double d[maxn];
+int n,m,tot,v[maxn],head[maxn];
+bool mark[maxn],flag;
+void insert(int x,int y,int z)
+{
+    e[++tot].go=y;e[tot].w=z;e[tot].next=head[x];head[x]=tot;
+}
+void spfa(int x)
+{
+    if(mark[x]){flag=1;return;}
+    mark[x]=1;
+    for(int i=head[x],y;i;i=e[i].next)
+     if(d[x]+e[i].w<d[y=e[i].go])
+      {
+          d[y]=d[x]+e[i].w;
+          spfa(y);
+          if(flag)return;
+      }
+    mark[x]=0;  
+}
+bool check()
+{
+    for(int i=1;i<=n;i++)d[i]=mark[i]=0;
+    flag=0;
+    for(int i=1;i<=n;i++)
+     {
+         spfa(i);
+         if(flag)return 1;
+     }
+    return 0; 
+}
