@@ -15,7 +15,6 @@ void insert(int u, int v){
     e[++tot] = (edge){v, head[u]}; head[u] = tot;
     e[++tot] = (edge){u, head[v]}; head[v] = tot;
 }
-
 void  dfs1(int x){
     size[x] = 1; vis[x] = 1;
     for1(i, 14){
@@ -42,4 +41,5 @@ void dfs2(int x, int chain){
     for4(i, x) if (deep[e[i].go] > deep[x] && size[e[i].go] > size[k]) {
         k = e[i].go;
     }
+
 }
