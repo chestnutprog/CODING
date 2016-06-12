@@ -2,18 +2,21 @@
 #include <algorithm>
 #include <set>
 #include <cmath>
+#include <map>
+#include <vector>
+#include <iostream>
+#include <queue>
 using namespace std;
-int c[]={2,4,3,9,5,25,7,49,11,13,17,19,23,29,31,37,41,43,47},s;
 #define F(i, x, y) for (int i = x; i <= y; i++)
 #define F0(i, n) for (int i = 0; i < n; i++)
 #define F1(i, n) for (int i = 1; i <= n; i++)
-char p[10];
+char s[3020];
 int main(){
-    F0(i,19){
-        printf("%d\n",c[i]);
-        fflush(stdout);
-        scanf("%s",p);
-        if(p[0]=='y')s++;
-    }
-    printf("%s",s>1?"composite":"prime");
+	freopen("allcs.in","w",stdout);
+	printf("3004 3004\n");
+	F0(i,3004){
+		s[i]=rand()%2?rand()%26+'A':rand()%26+'a';
+	}
+	printf("%s\n%s\n",s,s);
+	printf("0");
 }
