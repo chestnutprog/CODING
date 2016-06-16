@@ -132,8 +132,8 @@ void dfs(twobtrie* x){
     now[--tot]='\0';
 }
 int main(){
-	freopen("allcs.in","r",stdin);
-	freopen("allcs.out","w",stdout);
+	//freopen("allcs.in","r",stdin);
+	//freopen("allcs.out","w",stdout);
     scanf("%d%d",&n,&m);
     scanf("%s",a);
     scanf("%s",b+1);
@@ -145,7 +145,7 @@ int main(){
     F0(i,n){
       int size = cc[a[i]-'A'].size();
       if(size>=(++num[a[i]-'A'])){
-        int j = cc[a[i]-'A'][num[a[i]-'A']-1]++;
+        int j = cc[a[i]-'A'][num[a[i]-'A']-1];
         if(!importnode[j])importnode[j]=new twobtrie();
         F0(k,j){
           if(importnode[k]&&!importnode[k]->go.count(b[j]-'A'))

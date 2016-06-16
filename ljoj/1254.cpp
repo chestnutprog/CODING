@@ -6,17 +6,20 @@
 #include <vector>
 #include <iostream>
 #include <queue>
+#include <cstring>
 using namespace std;
 #define F(i, x, y) for (int i = x; i <= y; i++)
 #define F0(i, n) for (int i = 0; i < n; i++)
 #define F1(i, n) for (int i = 1; i <= n; i++)
-char s[3020];
+#define INF 0x7fffffff
+int p[60],dp[200010];
+int n,v,s;
 int main(){
-	freopen("allcs.in","w",stdout);
-	printf("3004 3004\n");
-	F0(i,3004){
-		s[i]=rand()%2?rand()%26+'A':rand()%26+'a';
-	}
-	printf("%s\n%s\n",s,s);
-	printf("0");
+    scanf("%d",&n);
+    F0(i,n)scanf("%d",&p[i]),s+=p[i];
+    v=s/2;
+    F0(i,n)
+      for(int j=v-p[i];j>=0;j--)
+      dp[j+p[i]] = max(dp[j+p[i]],dp[j]+p[i]);
+    printf("%d",s-dp[v]-dp[v]);
 }
