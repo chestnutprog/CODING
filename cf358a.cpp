@@ -12,19 +12,18 @@ using namespace std;
 #define F0(i, n) for (int i = 0; i < n; i++)
 #define F1(i, n) for (int i = 1; i <= n; i++)
 #define INF 0x7fffffff
-int a[100000];
-int S[100000];
-int d[100000];
-int n, ans;
+long long n, m;
+long long a[10], b[10];
 int main(){
-    scanf("%d", &n);
-    F1(i, n)
-    scanf("%d", &a[i]);
-    F0(i, n) S[i] = INF;
-    F1(i, n){
-        d[i] = upper_bound(S, S + i, a[i] - 1) - S;
-        S[d[i]] = min(S[d[i]], a[i]);
-        ans = max(ans, d[i]);
-    }
-    printf("%d", ans + 1);
+    cin >> n >> m;
+    F0(i, 5)
+    a[i] = n / 5,
+    b[i] = m / 5;
+    F1(i, 4)
+    a[i] += (n % 5 >= i),
+    b[i] += (m % 5 >= i);
+    long long ans = a[0] * b[0];
+    F1(i, 4)
+    ans += a[i] * b[5 - i];
+    cout << ans;
 }

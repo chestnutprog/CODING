@@ -13,14 +13,31 @@ using namespace std;
 #define F1(i, n) for (int i = 1; i <= n; i++)
 #define INF 0x7fffffff
 int n;
-int dp[101][2010];int a[101];int sum[101];
+int dp[111][4010]; int b[111]; int sum;
 int main(){
-    scanf("%d",&n);
-    F1(i,n)scanf("%d",&a[i]),sum[i]=sum[i-1]+a[i];
-    F1(i,n)
-    F1(j,sum[i]+2){
-      if(j-a[i]>=0)dp[i+1][j-a[i]]=max(dp[i+1][j-a[i]],dp[i][j]+a[i]);
-      dp[i+1][j+a[i]]=max(dp[i+1][j+a[i]],dp[i][j]+a[i]);
+    scanf("%d", &n);
+    F1(i, n) scanf("%d", &b[i]), sum += b[i];
+    //sum /= 2;
+    memset(dp, -1, sizeof(dp));
+    dp[1][0] = 0;
+    F1(i,n){
+        F0(j,sum){
+            if (dp[i][j] != -1) {
+                dp[i + 1][j] = max(dp[i + 1][j], dp[i][j]);
+                dp[i + 1][j + b[i]] = max(dp[i + 1][j + b[i]], dp[i][j] + b[i]);
+                if (b[i] >= j) {
+                    dp[i + 1][b[i] - j] = max(dp[i + 1][b[i] - j], dp[i][j] - j + b[i]);
+                } else {
+                    dp[i + 1][j - b[i]] = max(dp[i + 1][j - b[i]], dp[i][j]);
+                }
+            }
+        }
     }
-    printf("%d",dp[n+1][0]/2);
+    if (dp[n + 1][0]) {
+        printf("%d\n", dp[n + 1][0]);
+    } else {
+        printf("Impossible\n");
+    }
+    //  system("pause");
+    return 0;
 }

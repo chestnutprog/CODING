@@ -12,19 +12,19 @@ using namespace std;
 #define F0(i, n) for (int i = 0; i < n; i++)
 #define F1(i, n) for (int i = 1; i <= n; i++)
 #define INF 0x7fffffff
-int a[100000];
-int S[100000];
-int d[100000];
+int a[100010];
 int n, ans;
 int main(){
     scanf("%d", &n);
-    F1(i, n)
-    scanf("%d", &a[i]);
-    F0(i, n) S[i] = INF;
+    F1(i, n) scanf("%d", &a[i]);
+    sort(a +1, a + n +1);
     F1(i, n){
-        d[i] = upper_bound(S, S + i, a[i] - 1) - S;
-        S[d[i]] = min(S[d[i]], a[i]);
-        ans = max(ans, d[i]);
+        if (a[i] < ans) {
+            continue;
+        } else {
+            a[i] = a[i - 1] + 1;
+            ans = max(ans, a[i] + 1);
+        }
     }
-    printf("%d", ans + 1);
+    printf("%d", ans);
 }

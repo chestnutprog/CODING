@@ -7,14 +7,16 @@
 #include <iostream>
 #include <queue>
 #include <cstring>
+#include <sstream>
 #include <climits>
+#include <iostream>
+#include <vector>
 #include <sstream>
 #include <iomanip>
 using namespace std;
 #define F(i, x, y) for (int i = x; i <= y; i++)
 #define F0(i, n) for (int i = 0; i < n; i++)
 #define F1(i, n) for (int i = 1; i <= n; i++)
-#define INF 0x7fffffff
 #define LONG_LONG_MIN LLONG_MIN
 #define LONG_LONG_MAX LLONG_MAX
 #define ULONG_LONG_MIN ULLONG_MIN
@@ -1203,25 +1205,15 @@ inline std::ostream& operator<<(std::ostream &s, const InfInt &n)
     return s;
 }
 
-int n,k;
-InfInt a[50];
-InfInt  aa[50][50];
-InfInt  dp[51][51];
-InfInt pow1[50];
+InfInt f[110];
+int n;
 int main(){
-  scanf("%d%d\n",&n,&k);
-  pow1[0]=1;
-  F1(i,n)pow1[i]=pow1[i-1]*10;
-  F1(i,n)a[i]=getchar()-'0';//,aa[i][0]=1;//,aa[i][1]=a[i];
-  F1(i,n)
-    F0(j,i)
-      aa[i][j+1]=aa[i][j]+ a[i-j] * pow1[j];
-  F1(i,n)dp[i][0]=aa[i][i];
-  F1(i,n)
-    F1(j,k)
-     F1(l,i)
-      dp[i][j]=max(dp[i][j],dp[i-l][j-1]*aa[i][l]);
-
-  //printf("%d",1);
-  cout<<dp[n][k];
+  f[0]=1;
+  f[1]=1;
+  F(i,2,100)f[i]=0;
+    cin>>n;
+    for(int i=2;i<=n;i++)
+        for(int k=0;k<i;k++)
+            f[i]=f[i]+f[i-1-k]*f[k];
+    cout<<f[n]<<endl;
 }
