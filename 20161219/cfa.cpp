@@ -8,6 +8,7 @@
 #include<map>
 #include<set>
 #include<queue>
+#include<deque>
 #include<string>
 #define inf 1000000000
 #define maxn 500+100
@@ -21,17 +22,15 @@
 #define for3(i,x,y) for(int i=(x);i>=(y);i--)
 #define mod 1000000007
 using namespace std;
-inline int read()
-{
-	int x=0,f=1;char ch=getchar();
-	while(ch<'0'||ch>'9'){if(ch=='-')f=-1;ch=getchar();}
-	while(ch>='0'&&ch<='9'){x=10*x+ch-'0';ch=getchar();}
-	return x*f;
-}
+int x,c,a,b;
 int main()
 {
-	freopen("input.txt","r",stdin);
-	freopen("output.txt","w",stdout);
-
-	return 0;
+    ios::sync_with_stdio(0);
+    cin>>x;
+    c=sqrt(x);
+    for1(i,c){
+        if(x%i==0)a=i,b=x/i;
+    }
+    cout<<a<<' '<<b;
 }
+

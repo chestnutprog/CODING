@@ -1,0 +1,98 @@
+D:\CODING\20161116\segmenttree.cpp: In function 'int main()':
+D:\CODING\20161116\segmenttree.cpp:14:5: error: 'Root' was not declared in this scope
+     Root.build(1,N);
+     ^
+D:\CODING\20161116\segmenttree.cpp: In member function 'long long int Segment_Tree::node::__query_sum(int, int)':
+D:\CODING\20161116\segmenttree.cpp:61:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= l && q.r >= r) return val;
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:61:29: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= l && q.r >= r) return val;
+                             ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:64:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.r > mid) ans += rs->__query_sum(mid + 1, r);
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:65:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= mid) ans += ls->__query_sum(l, mid);
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp: In member function 'long long int Segment_Tree::node::query_sum(int, int)':
+D:\CODING\20161116\segmenttree.cpp:70:13: error: invalid use of non-static data member 'Segment_Tree::q'
+             q.l = l, q.r = r;
+             ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:70:22: error: invalid use of non-static data member 'Segment_Tree::q'
+             q.l = l, q.r = r;
+                      ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp: In member function 'void Segment_Tree::node::__range_add(int, int)':
+D:\CODING\20161116\segmenttree.cpp:75:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= l && q.r >= r) {
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:75:29: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= l && q.r >= r) {
+                             ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:76:24: error: invalid use of non-static data member 'Segment_Tree::q'
+                 val += q.val * (r - l + 1); lazy += q.val; return;
+                        ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:76:53: error: invalid use of non-static data member 'Segment_Tree::q'
+                 val += q.val * (r - l + 1); lazy += q.val; return;
+                                                     ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:79:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.r > mid) rs->__range_add(mid + 1, r);
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:80:17: error: invalid use of non-static data member 'Segment_Tree::q'
+             if (q.l <= mid) ls->__range_add(l, mid);
+                 ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp: In member function 'void Segment_Tree::node::range_add(int, int, int)':
+D:\CODING\20161116\segmenttree.cpp:85:13: error: invalid use of non-static data member 'Segment_Tree::q'
+             q.l = l, q.r = r; q.val = c;
+             ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:85:22: error: invalid use of non-static data member 'Segment_Tree::q'
+             q.l = l, q.r = r; q.val = c;
+                      ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^
+D:\CODING\20161116\segmenttree.cpp:85:31: error: invalid use of non-static data member 'Segment_Tree::q'
+             q.l = l, q.r = r; q.val = c;
+                               ^
+D:\CODING\20161116\segmenttree.cpp:32:7: note: declared here
+     } q;
+       ^

@@ -21,17 +21,15 @@
 #define for3(i,x,y) for(int i=(x);i>=(y);i--)
 #define mod 1000000007
 using namespace std;
-inline int read()
-{
-	int x=0,f=1;char ch=getchar();
-	while(ch<'0'||ch>'9'){if(ch=='-')f=-1;ch=getchar();}
-	while(ch>='0'&&ch<='9'){x=10*x+ch-'0';ch=getchar();}
-	return x*f;
+int T,n;
+int main(){
+    ios::sync_with_stdio(0);
+    cin>>T;
+    while(T--){
+        cin>>n;
+        cout<<(n>3?-1:1)<<endl;
+    }
 }
-int main()
-{
-	freopen("input.txt","r",stdin);
-	freopen("output.txt","w",stdout);
-
-	return 0;
-}
+// 0 1 2 3  4  5  6  7  8
+// 1 3 6 10 15 21 28 35 43
+// 1 1 1 -
